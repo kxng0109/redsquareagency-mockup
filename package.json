@@ -1,0 +1,23 @@
+{
+  "name": "redsquareagency-mockup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm:live-server\" \"npm:compile-typescript\" \"npm:compile-tailwindcss\"",
+    "compile-typescript": "tsc -w",
+    "compile-tailwindcss" : "tailwindcss -i src/styles.css -o public/styles.css --watch",
+    "live-server": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*, !.git/**/*' --directory --port 7777 --browser \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kxng0109/redsquareagency-mockup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kxng0109/redsquareagency-mockup/issues"
+  },
+  "homepage": "https://github.com/kxng0109/redsquareagency-mockup#readme"
+}
