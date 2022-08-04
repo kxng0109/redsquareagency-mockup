@@ -3,31 +3,27 @@
 @tailwind utilities;
 
 *, *:after, *:before{
-	@apply m-0 p-0 box-border;
-}
-
-:root{
-	--black:	 #111;
+	@apply m-0 p-0 box-border linetobook text-whiteish;
 }
 
 @font-face {
 	font-family: 'youngserif';
-	src: url('./fonts/YoungSerif-Regular.woff') format(woff);
+	src: url('./fonts/YoungSerif-Regular.woff');
 }
 
 @font-face {
 	font-family: 'linetobook';
-	src: url('./fonts/lineto-circular-book.woff2') format(woff2);
+	src: url('./fonts/lineto-circular-book.woff2');
 }
 
 @font-face {
 	font-family: 'linetobold';
-	src: url('./fonts/lineto-circular-bold.woff2') format(woff2);
+	src: url('./fonts/lineto-circular-bold.woff2');
 }
 
 @layer components{
 	.youngserif{
-		font-family: youngserif, serif;
+		font-family: 'youngserif', serif;
 	}
 
 	.linetobook{
@@ -35,7 +31,7 @@
 	}
 
 	.linetobold{
-		font-family: linetobold, sans-serif;
+		font-family: 'linetobold', sans-serif;
 	}
 }
 
@@ -56,9 +52,14 @@
 }
 
 #first-section--first-p{
-	@apply text-3xl linetobold;
+	@apply text-3xl linetobold leading-snug;
 }
 
-#first-section--first-p{
-	@apply text-[22px] linetobook;
+#first-section--second-p{
+	@apply text-[22px] linetobook my-8;
+}
+
+
+#second-section{
+	@apply before:mb-9 before:content-[''] before:bg-zinc-800 before:h-px before:w-full before:block;
 }
