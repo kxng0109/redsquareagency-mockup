@@ -10,6 +10,55 @@
 	--black:	 #111;
 }
 
+@font-face {
+	font-family: 'youngserif';
+	src: url('./fonts/YoungSerif-Regular.woff') format(woff);
+}
+
+@font-face {
+	font-family: 'linetobook';
+	src: url('./fonts/lineto-circular-book.woff2') format(woff2);
+}
+
+@font-face {
+	font-family: 'linetobold';
+	src: url('./fonts/lineto-circular-bold.woff2') format(woff2);
+}
+
+@layer components{
+	.youngserif{
+		font-family: youngserif, serif;
+	}
+
+	.linetobook{
+		font-family: linetobook, sans-serif;
+	}
+
+	.linetobold{
+		font-family: linetobold, sans-serif;
+	}
+}
+
+#header{
+	@apply flex justify-between items-center w-full my-8;
+}
+
 #header--logo{
 	@apply text-white w-7 h-7 before:bg-red-600 before:w-7 before:h-7 before:content-[''] before:block;
+}
+
+#first-section{
+	@apply mt-64;
+}
+
+.first-section--bold{
+	@apply text-4xl youngserif;
+}
+
+#first-section--first-p{
+	@apply text-3xl linetobold;
+}
+
+#first-section--first-p{
+	@apply text-[22px] linetobook;
 }
