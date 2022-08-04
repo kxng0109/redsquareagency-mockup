@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*, *:after, *:before{
+	@apply m-0 p-0 box-border;
+}
+
+:root{
+	--black:	 #111;
+}
+
+#header--logo{
+	@apply text-white w-7 h-7 before:bg-red-600 before:w-7 before:h-7 before:content-[''] before:block;
+}
