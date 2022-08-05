@@ -35,6 +35,19 @@
 	}
 }
 
+#header, #second-section, #third-section, footer{
+	@apply px-6;
+}
+
+#first-section>*{
+	@apply px-6
+}
+
+#first-section>img{
+	@apply px-0;
+}
+
+
 #header{
 	@apply flex justify-between items-center w-full my-8;
 }
@@ -43,12 +56,19 @@
 	@apply text-white w-7 h-7 before:bg-red-600 before:w-7 before:h-7 before:content-[''] before:block;
 }
 
+
 #first-section{
-	@apply mt-64;
+	@apply mt-[374px];
 }
 
 .first-section--bold{
 	@apply text-4xl youngserif;
+}
+
+@media (min-width: 415px){
+	.first-section--bold{
+		font-size: 35px;
+	}
 }
 
 #first-section--first-p{
@@ -61,5 +81,59 @@
 
 
 #second-section{
-	@apply before:mb-9 before:content-[''] before:bg-zinc-800 before:h-px before:w-full before:block;
+	@apply before:mb-9 before:content-[''] before:bg-zinc-800 before:h-px before:w-full before:block after:mt-9 after:content-[''] after:bg-zinc-800 after:h-px after:w-full after:block;
+}
+
+#second-section--header{
+	@apply text-lg text-grey mb-1;
+}
+
+.clients--name{
+	@apply text-1.5xl;
+}
+
+
+#third-section--email-side{
+	@apply py-9;
+}
+
+#third-section--email-side>p{
+	@apply linetobold text-4xl;
+}
+
+#third-section--other-side{
+	@apply py-1
+}
+
+#third-section--socials-icon{
+	@apply flex items-center
+}
+
+.socials-icon{
+	@apply text-xl pr-7
+}
+
+.nugs-logo{
+	@apply w-24
+}
+
+.nugs-plus{
+	@apply text-2xl
+}
+
+#third-section--locations{
+	@apply flex mt-6 mb-11;
+}
+
+#third-section--locations>p{
+	@apply text-lg text-grey pr-8 last-of-type:pr-0;
+}
+
+
+footer{
+	@apply relative px-0 flex items-center justify-center h-[156px] max-h-[156px] overflow-hidden;
+}
+
+.footer--blurred{
+	@apply blur-md absolute z-0 brightness-75;
 }

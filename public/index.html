@@ -10,7 +10,7 @@
 		<title>Red Square -- The agency for what comes next.</title>
 	</head>
 	<body class="bg-[#111] text-white">
-		<div id="container" class="mx-6">
+		<div id="container">
 			<header id="header">
 				<a href="./" id="header--logo">
 				</a>
@@ -25,14 +25,14 @@
 				<h2 class="first-section--bold mt-10">The agency for</h2>
 				<h2 class="first-section--bold">what comes next.</h2>
 
-				<img src="./images/3daacb44-40a6-4213-83c2-69c76683ba79_cne-thumb.jpg" class="inset-x-0 mt-8 mb-11">
+				<img src="./images/hotel.jpg" class="mt-8 mb-11">
 
 				<p id="first-section--first-p">We deal in ideas, design and media that are category defying. When the world Millis, you’ve got to Vanilli.</p>
 				<p id="first-section--second-p">Red Square believes in rigorous development of brand strategy and whip-smart execution. We make all sorts of things. Things that move markets, compel audiences and sell product. We help great brands create what comes next.</p>
 			</section>
 
 			<section id="second-section">
-				<p>Select Clients</p>
+				<p id="second-section--header">Select Clients</p>
 				<div class="clients">
 					<p class="clients--name">Cherokee Casinos</p>
 					<p class="clients--name">Flipboard</p>
@@ -60,12 +60,15 @@
 			<section id="third-section">
 				<div id="third-section--email-side">
 					<p>Let's talk.</p>
-					<p>hi@rsq.com</p>
+					<p class="text-redish">hi@rsq.com</p>
 				</div>
 
 				<div id="third-section--other-side">
 					<div id="third-section--socials-icon">
-						<img src="./images/nugs-logo.svg" class="socials-icon">
+						<div class="flex items-center">
+							<ion-icon name="add-circle" class="nugs-plus"></ion-icon>
+							<img src="./images/nugs-logo.svg" class="socials-icon nugs-logo">
+						</div>
 						<ion-icon name="logo-instagram" class="socials-icon"></ion-icon>
 						<ion-icon name="logo-twitter" class="socials-icon"></ion-icon>
 						<ion-icon name="logo-linkedin" class="socials-icon"></ion-icon>
@@ -80,9 +83,10 @@
 			</section>
 
 			<footer id="footer">
+				<img src="./images/vr.jpg" class="footer--blurred">
 				<a href="#" class="hidden">All Projects</a>
-				<a href="#" class="flex items-center">
-					<p class="mr-3">Work</p>
+				<a href="#" class="flex items-center relative z-1">
+					<p class="mr-2">Work</p>
 					<ion-icon name="chevron-forward-outline"></ion-icon>
 				</a>
 			</footer>

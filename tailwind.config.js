@@ -6,8 +6,11 @@ module.exports = {
       colors:{
         'blackish' : '#111',
         'whiteish' : '#fefefe',
-        'red' : '#e31e3c',
+        'redish' : '#e31e3c',
         'grey' : '#858585'
+      },
+      fontSize:{
+        '1.5xl' : ['22px', '35px']
       }
     },
   },

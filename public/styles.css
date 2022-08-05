@@ -592,14 +592,8 @@ video {
   }
 }
 
-.inset-x-0 {
-  left: 0px;
-  right: 0px;
-}
-
-.mx-6 {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+.relative {
+  position: relative;
 }
 
 .mr-3 {
@@ -616,6 +610,10 @@ video {
 
 .mb-11 {
   margin-bottom: 2.75rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
 }
 
 .flex {
@@ -640,11 +638,9 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-:root{
-  --black:	 #111;
-  --grey: #858585;
-  --red: #e31e3c;
-  --white: #fefefe;
+.text-redish {
+  --tw-text-opacity: 1;
+  color: rgb(227 30 60 / var(--tw-text-opacity));
 }
 
 *,  *:after,  *:before{
@@ -674,6 +670,21 @@ video {
   src: url('./fonts/lineto-circular-bold.woff2');
 }
 
+#header,  #second-section,  #third-section,  footer {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#first-section>* {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#first-section>img {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 #header {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -701,13 +712,19 @@ video {
 }
 
 #first-section {
-  margin-top: 16rem;
+  margin-top: 374px;
 }
 
 .first-section--bold{
   font-family: 'youngserif', serif;
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+@media (min-width: 415px){
+  .first-section--bold{
+    font-size: 35px;
+  }
 }
 
 #first-section--first-p{
@@ -733,4 +750,102 @@ video {
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
   --tw-content: '';
   content: var(--tw-content);
+}
+
+#second-section::after {
+  margin-top: 2.25rem;
+  display: block;
+  height: 1px;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+#second-section--header {
+  margin-bottom: 0.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(133 133 133 / var(--tw-text-opacity));
+}
+
+.clients--name {
+  font-size: 22px;
+  line-height: 35px;
+}
+
+#third-section--email-side {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+#third-section--email-side>p{
+  font-family: 'linetobold', sans-serif;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+#third-section--other-side {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+#third-section--socials-icon {
+  display: flex;
+  align-items: center;
+}
+
+.socials-icon {
+  padding-right: 1.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.nugs-logo {
+  width: 6rem;
+}
+
+.nugs-plus {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+#third-section--locations {
+  margin-top: 1.5rem;
+  margin-bottom: 2.75rem;
+  display: flex;
+}
+
+#third-section--locations>p {
+  padding-right: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(133 133 133 / var(--tw-text-opacity));
+}
+
+#third-section--locations>p:last-of-type {
+  padding-right: 0px;
+}
+
+footer {
+  position: relative;
+  display: flex;
+  height: 156px;
+  max-height: 156px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.footer--blurred {
+  position: absolute;
+  z-index: 0;
+  --tw-blur: blur(12px);
+  --tw-brightness: brightness(.75);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
