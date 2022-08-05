@@ -33,14 +33,18 @@
 	.linetobold{
 		font-family: 'linetobold', sans-serif;
 	}
+
+	.transitioning{
+		@apply transition-all duration-500;
+	}
 }
 
 #header, #second-section, #third-section, footer{
-	@apply px-6;
+	@apply px-6 sm:px-[3.1rem];
 }
 
 #first-section>*{
-	@apply px-6
+	@apply px-6 sm:px-[3.1rem];
 }
 
 #first-section>img{
@@ -49,16 +53,16 @@
 
 
 #header{
-	@apply flex justify-between items-center w-full my-8;
+	@apply flex justify-between items-center w-full my-8 sm:my-[4.5rem] sm:pr-10;
 }
 
 #header--logo{
-	@apply text-white w-7 h-7 before:bg-red-600 before:w-7 before:h-7 before:content-[''] before:block;
+	@apply text-white w-7 h-7 before:bg-red-600 before:w-[1.9rem] before:h-[1.85rem] before:content-[''] before:block;
 }
 
 
 #first-section{
-	@apply mt-[374px];
+	@apply mt-[374px] sm:mt-[405px];
 }
 
 .first-section--bold{
@@ -68,6 +72,7 @@
 @media (min-width: 415px){
 	.first-section--bold{
 		font-size: 35px;
+		@apply leading-[45px];
 	}
 }
 
@@ -81,7 +86,7 @@
 
 
 #second-section{
-	@apply before:mb-9 before:content-[''] before:bg-zinc-800 before:h-px before:w-full before:block after:mt-9 after:content-[''] after:bg-zinc-800 after:h-px after:w-full after:block;
+	@apply before:mb-9 before:content-[''] before:bg-zinc-800 before:h-px before:w-full before:block after:mt-9 after:sm:mt-14 after:content-[''] after:bg-zinc-800 after:h-px after:w-full after:block;
 }
 
 #second-section--header{
@@ -94,15 +99,15 @@
 
 
 #third-section--email-side{
-	@apply py-9;
+	@apply py-9 sm:pt-[8.125vw];
 }
 
 #third-section--email-side>p{
-	@apply linetobold text-4xl;
+	@apply linetobold text-4xl sm:text-[4rem] sm:leading-[66px] tracking-tighter;
 }
 
 #third-section--other-side{
-	@apply py-1
+	@apply pb-1
 }
 
 #third-section--socials-icon{
@@ -110,15 +115,19 @@
 }
 
 .socials-icon{
-	@apply text-xl pr-7
+	@apply text-1.5xl pl-8 transitioning hover:fill-gray-400;
 }
 
-.nugs-logo{
-	@apply w-24
+.nugs-logo-div:hover>*{
+	@apply fill-[#b7ac9b];
 }
 
 .nugs-plus{
-	@apply text-2xl
+	@apply pl-0 text-2xl
+}
+
+.nugs-logo{
+	@apply w-[70px] fill-white pl-0;
 }
 
 #third-section--locations{
@@ -131,9 +140,13 @@
 
 
 footer{
-	@apply relative px-0 flex items-center justify-center h-[156px] max-h-[156px] overflow-hidden;
+	@apply relative px-0 flex items-center justify-center h-[156px] max-h-[156px] overflow-hidden sm:mt-32 sm:mx-[3.1rem] sm:h-16 sm:rounded-t-md sm:justify-between text-2xl sm:hover:h-20 transitioning;
 }
 
 .footer--blurred{
-	@apply blur-md absolute z-0 brightness-75;
+	@apply blur-md absolute z-0 brightness-75 transitioning hover:blur-0 focus:blur-0;
+}
+
+footer:hover > .footer--blurred{
+	@apply blur-0;
 }
