@@ -766,6 +766,12 @@ video {
   }
 }
 
+@media (min-width: 768px) {
+  #first-section {
+    margin-top: 343px;
+  }
+}
+
 .first-section--bold{
   font-family: 'youngserif', serif;
   font-size: 2.25rem;
@@ -779,11 +785,26 @@ video {
   }
 }
 
+@media (min-width: 768px) {
+  .first-section--bold {
+    font-size: 4.25rem;
+    line-height: 4.5rem;
+  }
+}
+
 #first-section--first-p{
   font-family: 'linetobold', sans-serif;
   font-size: 1.875rem;
   line-height: 2.25rem;
   line-height: 1.375;
+  letter-spacing: -0.05em;
+}
+
+@media (min-width: 768px) {
+  #first-section--first-p {
+    font-size: 3.125rem;
+    line-height: 3.75rem;
+  }
 }
 
 #first-section--second-p{
@@ -791,6 +812,19 @@ video {
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 22px;
+}
+
+@media (min-width: 640px) {
+  #first-section--second-p {
+    margin-bottom: 7vw;
+  }
+}
+
+@media (min-width: 768px) {
+  #first-section--second-p {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
 }
 
 #second-section::before {
@@ -816,6 +850,11 @@ video {
 }
 
 @media (min-width: 640px) {
+  #second-section::before {
+    content: var(--tw-content);
+    margin-bottom: 6.25vw;
+  }
+
   #second-section::after {
     content: var(--tw-content);
     margin-top: 3.5rem;
@@ -900,7 +939,6 @@ video {
 
 #third-section--locations {
   margin-top: 1.5rem;
-  margin-bottom: 2.75rem;
   display: flex;
 }
 
@@ -921,6 +959,7 @@ footer {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
   position: relative;
+  margin-top: 2.75rem;
   display: flex;
   height: 156px;
   max-height: 156px;
@@ -968,6 +1007,36 @@ footer {
 .footer--blurred:focus {
   --tw-blur: blur(0);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+footer:hover > .footer--blurred {
+  --tw-blur: blur(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media (min-width: 860px) {
+  #first-section {
+    margin-top: 334px;
+  }
+
+  #third-section {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  #third-section--other-side {
+    padding-top: 8.125vw;
+    padding-bottom: 2.25rem;
+  }
+
+  #third-section--socials-icon {
+    justify-content: flex-end;
+  }
+
+  footer {
+    margin-top: 9rem;
+  }
 }
 
 @media (min-width: 640px) {
