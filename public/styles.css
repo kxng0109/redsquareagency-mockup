@@ -586,9 +586,9 @@ video {
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 2100px) {
   .container {
-    max-width: 1536px;
+    max-width: 2100px;
   }
 }
 
@@ -742,6 +742,13 @@ video {
   }
 }
 
+@media (min-width: 2100px) {
+  #header,  #first-section>*,  #second-section,  #third-section,  footer {
+    padding-left: 262px;
+    padding-right: 262px;
+  }
+}
+
 #header {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -791,7 +798,7 @@ video {
 }
 
 #first-section {
-  margin-top: 374px;
+  margin-top: 41.825vh;
 }
 
 @media (min-width: 640px) {
@@ -804,6 +811,11 @@ video {
   #first-section {
     margin-top: 343px;
   }
+}
+
+#first-section{
+  /*mt-[374px]*/
+  /*mt-[330px]*/
 }
 
 .first-section--bold{
@@ -833,10 +845,19 @@ video {
   }
 }
 
-#first-section--image {
+@media (min-width: 1440px) {
+  .first-section--bold {
+    font-size: 100px;
+    line-height: 100px;
+  }
+}
+
+#first-section--image-div {
   margin-top: 2rem;
   margin-bottom: 10.6024vw;
+  max-height: 51vw;
   cursor: pointer;
+  overflow: hidden;
   padding-left: 0px;
   padding-right: 0px;
   transition-property: transform;
@@ -846,19 +867,18 @@ video {
 }
 
 @media (min-width: 640px) {
-  #first-section--image {
+  #first-section--image-div {
     margin-top: 8.75vw;
   }
 }
 
 @media (min-width: 1024px) {
-  #first-section--image {
-    border-radius: 0.375rem;
+  #first-section--image-div {
     padding-left: 50px;
     padding-right: 50px;
   }
 
-  #first-section--image:hover {
+  #first-section--image-div:hover {
     --tw-scale-x: .98;
     --tw-scale-y: .98;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -866,14 +886,32 @@ video {
 }
 
 @media (min-width: 1440px) {
-  #first-section--image {
+  #first-section--image-div {
     padding-left: 105px;
     padding-right: 105px;
   }
 }
 
+#first-section--image-div{
+  /*Fix the height continously changing*/
+}
+
+#first-section--image {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  #first-section--image {
+    border-radius: 0.375rem;
+  }
+}
+
 #first-section--first-p{
   font-family: 'linetobold', sans-serif;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
   font-size: 1.875rem;
   line-height: 2.25rem;
   line-height: 1.375;
@@ -894,8 +932,18 @@ video {
   }
 }
 
+@media (min-width: 1440px) {
+  #first-section--first-p {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+}
+
 #first-section--second-p{
   font-family: linetobook, sans-serif;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 22px;
@@ -919,6 +967,13 @@ video {
     margin-top: 4.6829vw;
     font-size: 2.3414vw;
     line-height: 3.8048vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  #first-section--second-p {
+    font-size: 34px;
+    line-height: 55px;
   }
 }
 
@@ -988,6 +1043,13 @@ video {
   .clients--name {
     font-size: 1.6585vw;
     line-height: 3.3170vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  .clients--name {
+    font-size: 1.5rem;
+    line-height: 3rem;
   }
 }
 
@@ -1107,14 +1169,14 @@ footer {
     margin-left: 3.1rem;
     margin-right: 3.1rem;
     margin-top: 8rem;
-    height: 4rem;
+    height: 8.1115vh;
     justify-content: space-between;
     border-top-left-radius: 0.375rem;
     border-top-right-radius: 0.375rem;
   }
 
   footer:hover {
-    height: 5rem;
+    height: 10.1394vh;
   }
 }
 
@@ -1169,6 +1231,18 @@ footer:hover > .footer--blurred {
   }
 }
 
+@media (min-width: 1440px) {
+  footer {
+    margin-left: 105px;
+    margin-right: 105px;
+    height: 8.5129vh;
+  }
+
+  footer:hover {
+    height: 9.9137vh;
+  }
+}
+
 @media (min-width: 1024px) {
   #first-section {
     margin-top: 291px;
@@ -1184,6 +1258,12 @@ footer:hover > .footer--blurred {
 @media screen and (min-width: 1244px) {
   #first-section {
     margin-top: 245px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #first-section {
+    margin-top: 39.448vh;
   }
 }
 

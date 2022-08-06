@@ -62,7 +62,7 @@
 }
 
 #header, #first-section>*, #second-section, #third-section, footer{
-	@apply xl:px-[208px];
+	@apply xl:px-[208px] 2xl:px-[262px];
 }
 
 
@@ -76,7 +76,7 @@
 
 
 #first-section{
-	@apply mt-[374px] sm:mt-[405px] md:mt-[343px];
+	@apply mt-[41.825vh] sm:mt-[405px] md:mt-[343px];/*mt-[374px]*//*mt-[330px]*/
 }
 
 .first-section--bold{
@@ -91,19 +91,23 @@
 }
 
 .first-section--bold{
-	 @apply md:text-[4.25rem] md:leading-[4.5rem] lg:text-[7.0243vw] lg:leading-[7.0243vw];
+	@apply md:text-[4.25rem] md:leading-[4.5rem] lg:text-[7.0243vw] lg:leading-[7.0243vw] xl:text-[100px] xl:leading-[100px];
+}
+
+#first-section--image-div{
+	@apply px-0 mt-8 mb-[10.6024vw] sm:mt-[8.75vw] cursor-pointer lg:px-[50px] lg:hover:scale-98 transition-transform duration-200 ease-in xl:px-[105px] max-h-[51vw] overflow-hidden; /*Fix the height continously changing*/
 }
 
 #first-section--image{
-	@apply px-0 mt-8 mb-[10.6024vw] sm:mt-[8.75vw] cursor-pointer lg:px-[50px] lg:rounded-md lg:hover:scale-98 transition-transform duration-200 ease-in xl:px-[105px];
+	@apply object-cover lg:rounded-md 
 }
 
 #first-section--first-p{
-	@apply text-3xl linetobold leading-snug tracking-tighter md:text-[3.125rem] md:leading-[3.75rem] lg:text-[4.4878vw] lg:leading-[5.4634vw];
+	@apply text-3xl linetobold leading-snug tracking-tighter md:text-[3.125rem] md:leading-[3.75rem] lg:text-[4.4878vw] lg:leading-[5.4634vw] xl:text-[4rem] xl:leading-[5rem] transitioning;
 }
 
 #first-section--second-p{
-	@apply text-[22px] linetobook my-8 sm:mb-[7vw] md:text-2xl md:leading-[2.5rem] lg:text-[2.3414vw] lg:leading-[3.8048vw] lg:mt-[4.6829vw];
+	@apply text-[22px] linetobook my-8 sm:mb-[7vw] md:text-2xl md:leading-[2.5rem] lg:text-[2.3414vw] lg:leading-[3.8048vw] lg:mt-[4.6829vw] xl:text-[34px] xl:leading-[55px] transitioning;
 }
 
 
@@ -116,7 +120,7 @@
 }
 
 .clients--name{
-	@apply text-1.5xl lg:text-[1.6585vw] lg:leading-[3.3170vw];
+	@apply text-1.5xl lg:text-[1.6585vw] lg:leading-[3.3170vw] xl:text-[1.5rem] xl:leading-[3rem];
 }
 
 
@@ -174,7 +178,7 @@
 
 
 footer{
-	@apply mt-11 relative px-0 flex items-center justify-center h-[156px] max-h-[156px] overflow-hidden sm:mt-32 sm:mx-[3.1rem] sm:h-16 sm:rounded-t-md sm:justify-between text-2xl sm:hover:h-20 transitioning;
+	@apply mt-11 relative px-0 flex items-center justify-center h-[156px] max-h-[156px] overflow-hidden sm:mt-32 sm:mx-[3.1rem] sm:h-[8.1115vh] sm:rounded-t-md sm:justify-between text-2xl sm:hover:h-[10.1394vh] transitioning;
 }
 
 .footer--blurred{
@@ -208,6 +212,10 @@ footer:hover > .footer--blurred{
 	}
 }
 
+footer{
+	@apply xl:h-[8.5129vh] xl:mx-[105px] xl:hover:h-[9.9137vh];
+}
+
 #first-section{
 	@apply  lg:mt-[291px]
 }
@@ -222,4 +230,8 @@ footer:hover > .footer--blurred{
 	#first-section{
 		@apply mt-[245px];
 	}
+}
+
+#first-section{
+	@apply xl:mt-[39.448vh];
 }
