@@ -43,9 +43,31 @@
 	@apply px-6 sm:px-[3.1rem] lg:px-[127px];
 }
 
+@media (min-width: 1100px){
+	#header, #first-section>*, #second-section, #third-section, footer{
+		@apply px-[132px]
+	}
+}
+
+@media (min-width: 1190px){
+	#header, #first-section>*, #second-section, #third-section, footer{
+		@apply px-[141px]
+	}
+}
+
+@media (min-width: 1244px){
+	#header, #first-section>*, #second-section, #third-section, footer{
+		@apply px-[145px]
+	}
+}
+
+#header, #first-section>*, #second-section, #third-section, footer{
+	@apply xl:px-[208px];
+}
+
 
 #header{
-	@apply flex justify-between items-center w-full my-8 sm:my-[4.5rem] sm:pr-10 lg:my-[100px] lg:pr-32;
+	@apply flex justify-between items-center w-full my-8 sm:my-[4.5rem] sm:pr-10 lg:my-[100px] lg:pr-32 xl:pr-[202px];
 }
 
 #header--logo{
@@ -69,11 +91,11 @@
 }
 
 .first-section--bold{
-	 @apply md:text-[4.25rem] md:leading-[4.5rem] lg:text-7xl;
+	 @apply md:text-[4.25rem] md:leading-[4.5rem] lg:text-[7.0243vw] lg:leading-[7.0243vw];
 }
 
 #first-section--image{
-	@apply px-0 mt-8 mb-[10.6024vw] sm:mt-[8.75vw] cursor-pointer lg:px-[50px] lg:rounded-md lg:hover:scale-98 transition-transform duration-200 ease-in;
+	@apply px-0 mt-8 mb-[10.6024vw] sm:mt-[8.75vw] cursor-pointer lg:px-[50px] lg:rounded-md lg:hover:scale-98 transition-transform duration-200 ease-in xl:px-[105px];
 }
 
 #first-section--first-p{
@@ -188,4 +210,16 @@ footer:hover > .footer--blurred{
 
 #first-section{
 	@apply  lg:mt-[291px]
+}
+
+@media screen and (min-width: 1100px) {
+	#first-section{
+		@apply mt-[277px]
+	}
+}
+
+@media screen and (min-width: 1244px) {
+	#first-section{
+		@apply mt-[245px];
+	}
 }

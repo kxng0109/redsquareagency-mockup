@@ -3,6 +3,9 @@ module.exports = {
   content: ["./public/**/*.{html,js}"],
   theme: {
     extend: {
+      screens:{
+        'xl' : '1440px',
+      },
       colors:{
         'blackish' : '#111',
         'whiteish' : '#fefefe',
@@ -14,7 +17,7 @@ module.exports = {
       },
       scale:{
         '98': '.98',
-      }
+      },
     },
   },
   plugins: [],
