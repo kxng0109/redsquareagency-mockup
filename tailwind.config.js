@@ -11,6 +11,9 @@ module.exports = {
       },
       fontSize:{
         '1.5xl' : ['22px', '35px']
+      },
+      scale:{
+        '98': '.98',
       }
     },
   },
