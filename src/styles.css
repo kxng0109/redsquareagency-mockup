@@ -6,6 +6,10 @@
 	@apply m-0 p-0 box-border linetobook text-whiteish;
 }
 
+:root{
+	--animation: none;
+}
+
 @font-face {
 	font-family: 'youngserif';
 	src: url('./fonts/YoungSerif-Regular.woff');
@@ -103,16 +107,50 @@
 }
 
 #first-section--first-p{
-	@apply text-3xl linetobold leading-snug tracking-tighter md:text-[3.125rem] md:leading-[3.75rem] lg:text-[4.4878vw] lg:leading-[5.4634vw] xl:text-[4rem] xl:leading-[5rem] transitioning;
+	@apply text-3xl linetobold leading-snug tracking-tighter md:text-[3.125rem] md:leading-[3.75rem] lg:text-[4.4878vw] lg:leading-[5.4634vw] xl:text-[4rem] xl:leading-[5rem] transitioning opacity-0;
+}
+
+.first-p-animation{
+	animation: slideUp 0.3s ease-out forwards;
+}
+
+@keyframes slideUp{
+	0%{
+		@apply opacity-0 pt-64;
+	}
+
+	100%{
+		@apply opacity-100 pt-0;
+	}
 }
 
 #first-section--second-p{
-	@apply text-[22px] linetobook my-8 sm:mb-[7vw] md:text-2xl md:leading-[2.5rem] lg:text-[2.3414vw] lg:leading-[3.8048vw] lg:mt-[4.6829vw] xl:text-[34px] xl:leading-[55px] transitioning;
+	@apply text-[22px] linetobook my-8 sm:mb-[7vw] md:text-2xl md:leading-[2.5rem] lg:text-[2.3414vw] lg:leading-[3.8048vw] lg:mt-[4.6829vw] xl:text-[34px] xl:leading-[55px] transitioning opacity-0;
+}
+
+.second-p-animation{
+	animation: slideUp 0.8s ease-out forwards;
 }
 
 
 #second-section{
 	@apply before:mb-9 before:content-[''] before:bg-zinc-800 before:h-px before:w-full before:block after:mt-9 after:sm:mt-14 after:content-[''] after:bg-zinc-800 after:h-px after:w-full after:block sm:before:mb-[6.25vw] lg:flex after:flex-none before:flex-none lg:flex-wrap; 
+}
+
+#second-section::before,
+#second-section::after{
+	@apply w-0;
+	animation: var(--animation);
+}
+
+@keyframes increaseWidth{
+	0%{
+		@apply w-0;
+	}
+
+	100%{
+		@apply w-full;
+	}
 }
 
 #second-section--header{

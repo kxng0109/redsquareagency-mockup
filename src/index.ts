@@ -1,5 +1,7 @@
 const firstSectionImage = document.querySelector('#first-section--image') as HTMLImageElement;
-const firstSectionParagraph = document.querySelector('#first-section--first-p') as HTMLParagraphElement;
+const firstSectionFirstP = document.querySelector('#first-section--first-p') as HTMLParagraphElement;
+const firstSectionSecondP = document.querySelector('#first-section--second-p') as HTMLParagraphElement;
+const secondSection = document.querySelector('#second-section') as HTMLDivElement;
 let windowHeight = window.innerHeight;
 window.onresize = () => windowHeight = window.innerHeight;
 
@@ -19,10 +21,29 @@ let changeNumber = ():number =>{
 	return num = 1;
 };
 
-setInterval(() => changeNumber(), 250);
+// setInterval(() => changeNumber(), 250);
 
-let showElement = (elementHeight: number)  =>{
-	return windowHeight - elementHeight > 130 ? 'show' : 'hide';
+let showElement = (theElement:HTMLElement, theClassNameOrCssVariableName:string, variableChangedValue = 'none') =>{
+	// return windowHeight - elementHeight > 130 ? 'show' : 'hide';
+	let calculations:number = windowHeight - theElement.getBoundingClientRect().top
+
+	switch(variableChangedValue){
+		case 'none' :
+			calculations > 130 ? theElement.classList.add(theClassNameOrCssVariableName) : 
+			calculations < 0 ? theElement.classList.remove(theClassNameOrCssVariableName):
+			'';
+		break;
+		default:
+			theElement.style.setProperty(theClassNameOrCssVariableName,  variableChangedValue);
+		break;
+	}
 }
 
-window.onscroll = () => console.log(showElement(firstSectionParagraph.getBoundingClientRect().top))
+//theElement.style.setProperty('--animation', 'increaseWidth 0.6s ease-out forwards');
+
+window.onscroll = () => {
+	showElement(firstSectionFirstP, 'first-p-animation');
+	showElement(firstSectionSecondP, 'second-p-animation');
+	showElement(secondSection, '--animation', 'increaseWidth 0.6s ease-out forwards');
+};
+
