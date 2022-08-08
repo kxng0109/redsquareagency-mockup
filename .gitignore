@@ -1,0 +1,5 @@
+# Specify filepatterns you want git to ignore.
+# Didn't use any node_module, but for future use and others, I have included it.
+node_modules
+format
+package-lock.json
