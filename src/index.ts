@@ -2,6 +2,11 @@ const firstSectionImage = document.querySelector('#first-section--image') as HTM
 const firstSectionFirstP = document.querySelector('#first-section--first-p') as HTMLParagraphElement;
 const firstSectionSecondP = document.querySelector('#first-section--second-p') as HTMLParagraphElement;
 const secondSection = document.querySelector('#second-section') as HTMLDivElement;
+const clientNames = document.querySelectorAll('.clients--name') as NodeListOf<HTMLParagraphElement>;
+const secondSectionHeader = document.querySelector('#second-section--header') as HTMLParagraphElement;
+const thirdSection = document.querySelector('#third-section') as HTMLDivElement;
+const clientNamesArr:HTMLParagraphElement[] = [...clientNames];
+
 let windowHeight = window.innerHeight;
 window.onresize = () => windowHeight = window.innerHeight;
 
@@ -23,27 +28,30 @@ let changeNumber = ():number =>{
 
 // setInterval(() => changeNumber(), 250);
 
-let showElement = (theElement:HTMLElement, theClassNameOrCssVariableName:string, variableChangedValue = 'none') =>{
-	// return windowHeight - elementHeight > 130 ? 'show' : 'hide';
-	let calculations:number = windowHeight - theElement.getBoundingClientRect().top
+let showElement = (theElement:HTMLElement, theClassNameOrCssVariableName:string, value:Number = 130, variableChangedValue = 'none') =>{
+	let calculations:number = windowHeight - theElement.getBoundingClientRect().top;
 
 	switch(variableChangedValue){
 		case 'none' :
-			calculations > 130 ? theElement.classList.add(theClassNameOrCssVariableName) : 
+			calculations > value ? theElement.classList.add(theClassNameOrCssVariableName) : 
 			calculations < 0 ? theElement.classList.remove(theClassNameOrCssVariableName):
 			'';
 		break;
 		default:
-			theElement.style.setProperty(theClassNameOrCssVariableName,  variableChangedValue);
+			calculations > value ? theElement.style.setProperty(theClassNameOrCssVariableName,  variableChangedValue): 
+			theElement.style.setProperty(theClassNameOrCssVariableName,  'none');
 		break;
 	}
 }
 
-//theElement.style.setProperty('--animation', 'increaseWidth 0.6s ease-out forwards');
-
 window.onscroll = () => {
 	showElement(firstSectionFirstP, 'first-p-animation');
 	showElement(firstSectionSecondP, 'second-p-animation');
-	showElement(secondSection, '--animation', 'increaseWidth 0.6s ease-out forwards');
+	showElement(secondSection, '--second-section-before-animation', 10, 'increaseWidth 0.6s ease-out forwards');
+	clientNames.forEach(item => {
+		showElement(item, 'clients--name--animation', 10);
+	});
+	showElement(secondSectionHeader, 'second-section-header-animation', 10);
+	showElement(secondSection, '--second-section-after-animation', parseInt(getComputedStyle(secondSection).getPropertyValue('height')), 'increaseWidth 0.6s ease-out forwards');
+	showElement(thirdSection, 'second-p-animation', 150);
 };
-

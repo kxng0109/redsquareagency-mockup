@@ -7,7 +7,8 @@
 }
 
 :root{
-	--animation: none;
+	--second-section-before-animation: none;
+	--second-section-after-animation: none;
 }
 
 @font-face {
@@ -103,7 +104,7 @@
 }
 
 #first-section--image{
-	@apply object-cover lg:rounded-md 
+	@apply object-cover lg:rounded-xl;
 }
 
 #first-section--first-p{
@@ -111,7 +112,7 @@
 }
 
 .first-p-animation{
-	animation: slideUp 0.3s ease-out forwards;
+	animation: slideUp 0.4s ease-out forwards;
 }
 
 @keyframes slideUp{
@@ -134,13 +135,15 @@
 
 
 #second-section{
-	@apply before:mb-9 before:content-[''] before:bg-zinc-800 before:h-px before:w-full before:block after:mt-9 after:sm:mt-14 after:content-[''] after:bg-zinc-800 after:h-px after:w-full after:block sm:before:mb-[6.25vw] lg:flex after:flex-none before:flex-none lg:flex-wrap; 
+	@apply before:mb-9 before:content-[''] before:bg-zinc-800 before:h-px before:w-0 before:block after:mt-9 after:sm:mt-14 after:content-[''] after:bg-zinc-800 after:h-px after:w-0 after:block sm:before:mb-[6.25vw] lg:flex after:flex-none before:flex-none lg:flex-wrap; 
 }
 
-#second-section::before,
+#second-section::before{
+	animation: var(--second-section-before-animation);
+}
+
 #second-section::after{
-	@apply w-0;
-	animation: var(--animation);
+	animation: var(--second-section-after-animation);
 }
 
 @keyframes increaseWidth{
@@ -154,13 +157,45 @@
 }
 
 #second-section--header{
-	@apply text-lg text-grey mb-1 lg:w-2/5;
+	@apply opacity-0 text-lg text-grey mb-1 lg:w-2/5;
+}
+
+.second-section-header-animation{
+	animation: changeOpacity 0.5s ease-out forwards;
+}
+
+@keyframes changeOpacity{
+	0%{
+		@apply opacity-0;
+	}
+
+	100%{
+		@apply opacity-100;
+	}
 }
 
 .clients--name{
-	@apply text-1.5xl lg:text-[1.6585vw] lg:leading-[3.3170vw] xl:text-[1.5rem] xl:leading-[3rem];
+	@apply -ml-5 opacity-0 text-1.5xl lg:text-[1.6585vw] lg:leading-[3.3170vw] xl:text-[1.5rem] xl:leading-[3rem];
 }
 
+.clients--name--animation{
+	animation: slideRight 0.5s ease-out forwards;	
+}
+
+@keyframes slideRight{
+	0%{
+		@apply -ml-5 opacity-0
+	}
+
+	100%{
+		@apply ml-0 opacity-100
+	}
+}
+
+
+#third-section{
+	@apply opacity-0 pt-64;
+}
 
 #third-section--email-side{
 	@apply py-9 sm:pt-[8.125vw];
@@ -216,7 +251,7 @@
 
 
 footer{
-	@apply mt-11 relative px-0 flex items-center justify-center h-[156px] max-h-[156px] overflow-hidden sm:mt-32 sm:mx-[3.1rem] sm:h-[8.1115vh] sm:rounded-t-md sm:justify-between text-2xl sm:hover:h-[10.1394vh] transitioning;
+	@apply mt-11 relative px-0 flex items-center justify-center /*h-[156px] max-h-[156px]*/ h-[19.7718vh] max-h-[19.7718vh] overflow-hidden /*sm:mt-32*/ sm:mt-44 sm:mx-[3.1rem] sm:h-[8.1115vh] sm:rounded-t-md sm:justify-between text-2xl sm:hover:h-[10.1394vh] transitioning;
 }
 
 .footer--blurred{
