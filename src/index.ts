@@ -28,7 +28,7 @@ let changeNumber = ():number =>{
 
 // setInterval(() => changeNumber(), 250);
 
-let showElement = (theElement:HTMLElement, theClassNameOrCssVariableName:string, value:Number = 130, variableChangedValue = 'none') =>{
+let showElement = (theElement:HTMLElement, theClassNameOrCssVariableName:string, value:Number = 130, variableChangedValue = 'none') : void =>{
 	let calculations:number = windowHeight - theElement.getBoundingClientRect().top;
 
 	switch(variableChangedValue){

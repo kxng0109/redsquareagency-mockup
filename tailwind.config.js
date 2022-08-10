@@ -11,7 +11,8 @@ module.exports = {
         'blackish' : '#111',
         'whiteish' : '#fefefe',
         'redish' : '#e31e3c',
-        'grey' : '#858585'
+        'grey' : '#858585',
+        'light-greyish' : '#b7ac9b'
       },
       fontSize:{
         '1.5xl' : ['22px', '35px']

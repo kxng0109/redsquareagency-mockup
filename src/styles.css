@@ -44,29 +44,29 @@
 	}
 }
 
-#header, #first-section>*, #second-section, #third-section, footer{
+#header, #first-section>*, #second-section, #third-section, footer, #nugs-section{
 	@apply px-6 sm:px-[3.1rem] lg:px-[127px];
 }
 
 @media (min-width: 1100px){
-	#header, #first-section>*, #second-section, #third-section, footer{
+	#header, #first-section>*, #second-section, #third-section, footer, #nugs-section{
 		@apply px-[132px]
 	}
 }
 
 @media (min-width: 1190px){
-	#header, #first-section>*, #second-section, #third-section, footer{
+	#header, #first-section>*, #second-section, #third-section, footer, #nugs-section{
 		@apply px-[141px]
 	}
 }
 
 @media (min-width: 1244px){
-	#header, #first-section>*, #second-section, #third-section, footer{
+	#header, #first-section>*, #second-section, #third-section, footer, #nugs-section{
 		@apply px-[145px]
 	}
 }
 
-#header, #first-section>*, #second-section, #third-section, footer{
+#header, #first-section>*, #second-section, #third-section, footer, #nugs-section{
 	@apply xl:px-[208px] 2xl:px-[262px];
 }
 
@@ -126,7 +126,7 @@
 }
 
 #first-section--second-p{
-	@apply text-[22px] linetobook my-8 sm:mb-[7vw] md:text-2xl md:leading-[2.5rem] lg:text-[2.3414vw] lg:leading-[3.8048vw] lg:mt-[4.6829vw] xl:text-[34px] xl:leading-[55px] transitioning opacity-0;
+	@apply text-[22px] linetobook my-8 sm:mb-[7vw] md:text-2xl md:leading-10 lg:text-[2.3414vw] lg:leading-[3.8048vw] lg:mt-[4.6829vw] xl:text-[34px] xl:leading-[55px] transitioning opacity-0;
 }
 
 .second-p-animation{
@@ -260,6 +260,35 @@ footer{
 
 footer:hover > .footer--blurred{
 	@apply blur-0;
+}
+
+
+#nugs-section{
+	@apply fixed transitioning inset-0 top-[unset] flex flex-col bg-light-greyish pb-7 px-10 rounded-t-3xl;
+}
+
+#nugs--image{
+	@apply w-[116px] my-6;
+}
+
+#nugs--email{
+	@apply flex justify-between;
+}
+
+#nugs--input{
+	@apply px-5 h-16 rounded-lg text-lg bg-[#bfb5a6] text-white placeholder:text-white placeholder:linetobook placeholder:text-lg active:outline-0 active:border-0 focus:outline-0 focus:border-0 hover:outline-0 hover:border-0 transitioning focus:bg-[#111111] max-w-[168px]/*rgba(17,17,17,.6)*/;
+}
+
+#nugs--texts>p{
+	@apply text-[1.375rem] leading-7 mt-[30px]
+}
+
+#nugs--bottom-part{
+	@apply flex flex-wrap justify-between before:h-px before:w-full before:bg-whiteish before:my-7 before:min-w-full;
+}
+
+#nugs--bottom-part>p{
+	@apply cursor-pointer text-xl leading-6 text-whiteish opacity-60 hover:opacity-100 transitioning after:content-[''] after:w-full after:block after:h-[2px] after:bg-whiteish after:opacity-60 after:hover:opacity-100 after:hover:-mt-[2px] after:transitioning;
 }
 
 
