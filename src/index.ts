@@ -1,3 +1,4 @@
+const container = document.querySelector('#container') as HTMLDivElement;
 const firstSectionImage = document.querySelector('#first-section--image') as HTMLImageElement;
 const firstSectionFirstP = document.querySelector('#first-section--first-p') as HTMLParagraphElement;
 const firstSectionSecondP = document.querySelector('#first-section--second-p') as HTMLParagraphElement;
@@ -5,6 +6,12 @@ const secondSection = document.querySelector('#second-section') as HTMLDivElemen
 const clientNames = document.querySelectorAll('.clients--name') as NodeListOf<HTMLParagraphElement>;
 const secondSectionHeader = document.querySelector('#second-section--header') as HTMLParagraphElement;
 const thirdSection = document.querySelector('#third-section') as HTMLDivElement;
+const emailField = document.querySelector('#nugs--input') as HTMLInputElement;
+const emailSubmitBtn = document.querySelector('#nugs--submit-btn') as HTMLButtonElement;
+const neverMind = document.querySelector('#neverMind') as HTMLParagraphElement;
+const nugsSection = document.querySelector('#nugs-section') as HTMLDivElement;
+const nugsLogo = document.querySelector('.nugs-logo') as HTMLImageElement;
+const nugsLogoThirdSection = document.querySelector('.nugs-logo-third-section') as HTMLDivElement;
 const clientNamesArr:HTMLParagraphElement[] = [...clientNames];
 
 let windowHeight = window.innerHeight;
@@ -55,3 +62,36 @@ window.onscroll = () => {
 	showElement(secondSection, '--second-section-after-animation', parseInt(getComputedStyle(secondSection).getPropertyValue('height')), 'increaseWidth 0.6s ease-out forwards');
 	showElement(thirdSection, 'second-p-animation', 150);
 };
+
+const useRegex = (input: string) => {
+    let regex = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
+    regex.test(input) ? emailSubmitBtn.className = 'canSubmit' : emailSubmitBtn.classList.remove('canSubmit');
+}
+
+useRegex(emailField.value);
+emailField.onkeyup = () => useRegex(emailField.value);
+
+//@ts-ignore
+neverMind.onclick = () => document.documentElement.onclick();
+
+nugsLogoThirdSection.onclick = () =>{
+	document.documentElement.classList.add('pointer-events-none');
+	document.documentElement.classList.add('overflow-y-hidden');
+	nugsSection.style.setProperty('--nugs-section-height',  (`-0px`));
+	nugsSection.style.setProperty('--testing',  (`0px`));
+	nugsSection.className = 'animation';
+}
+
+document.documentElement.onclick = e =>{
+	//@ts-ignore using it because it say 'Property 'path' does not exist on type 'MouseEvent'' but it is
+	if(e.path.includes(nugsLogoThirdSection)) return; //If we are clicking on the nugs logo, don't do anything
+	nugsSection.classList.contains('animation') ?
+	(
+		document.documentElement.classList.remove('pointer-events-none'),
+		document.documentElement.classList.remove('overflow-y-hidden'),
+		nugsSection.style.setProperty('--nugs-section-height',  (`-${getComputedStyle(nugsSection).getPropertyValue('height')}`)),
+		nugsSection.style.setProperty('--testing',  (`24px`)),
+		setTimeout(() => nugsSection.classList.remove('animation'), 200)
+	) : '';
+}
+nugsSection.style.setProperty('--nugs-section-height',  (`-${getComputedStyle(nugsSection).getPropertyValue('height')}`))

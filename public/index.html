@@ -6,8 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="./styles.css">
 		<link  rel="icon" type="image/x-icon" href="./images/favicon-32.png">
 		<script type="text/javascript" defer src="./index.js"></script>
-		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
 		<title>Red Square — The agency for what comes next.
 		</title>
 	</head>
@@ -72,10 +72,9 @@
 
 				<div id="third-section--other-side">
 					<div id="third-section--socials-icon">
-						<div class="flex nugs-logo-div h-7">
+						<div class="flex nugs-logo-div h-7 nugs-logo-third-section">
 							<ion-icon name="add-circle" class="nugs-plus socials-icon"></ion-icon>
-							<!-- <img src="./images/nugs-logo.svg" id="nugs-logo" class="socials-icon"> -->
-							<svg x="0px" y="0px" viewBox="0 0 69 25" xml:space="preserve" class="nugs-logo socials-icon" style="enable-background:new 0 0 69 25" data-v-1310d8d4="">
+							<svg x="0px" y="0px" viewBox="0 0 69 25" xml:space="preserve" class="nugs-logo socials-icon" style="enable-background:new 0 0 69 25">
 							    <path d="M21,0.4c0.2,0,0.4,0.1,0.4,0.4v0.8c0,0.2-0.1,0.4-0.4,0.4c-1.2,0-1.8,1-1.8,2.4v14.6
 							                c0,0.2-0.1,0.4-0.4,0.4h-1.7c-0.2,0-0.3-0.1-0.5-0.2L4.7,5.3v10c0,1.4,0.6,2.4,1.8,2.4c0.2,0,0.4,0.1,0.4,0.4v0.8
 							                c0,0.2-0.1,0.4-0.4,0.4H0.4c-0.2,0-0.4-0.1-0.4-0.4v-0.8c0-0.2,0.1-0.4,0.4-0.4c1.2,0,1.8-1,1.8-2.4V2.5C1.7,2.1,1.3,1.9,0.6,1.9
@@ -137,9 +136,9 @@
 						<img id="nugs--image" alt="nugs-logo" src="./images/nugs-logo.svg">
 
 						<div id="nugs--email">
-							<input type="email" name="email" id="nugs--input" placeholder="What's your email?">
-							<button type="submit" id="nugs--submit"><ion-icon name="add-circle" class="text-7xl"></ion-icon></button>
-						</div>
+							<input type="email" name="email" id="nugs--input" placeholder="What’s your email?" autocomplete="off">
+							<button type="submit" id="nugs--submit"><ion-icon name="add-circle"  id="nugs--submit-btn"></ion-icon></button>
+						</div><!--  style="color: hsla(36, 16%, 75%);" -->
 					</div>
 
 					<div id="nugs--texts">
@@ -149,8 +148,8 @@
 					</div>
 				</div>
 				<div id="nugs--bottom-part">
-					<p>Nevermind</p>
-					<p>Privacy Policy</p>
+					<p id="neverMind" class="cursor-pointer">Nevermind</p>
+					<p class="cursor-pointer">Privacy Policy</p>
 				</div>
 			</section>
 		</div>

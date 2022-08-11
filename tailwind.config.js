@@ -12,7 +12,8 @@ module.exports = {
         'whiteish' : '#fefefe',
         'redish' : '#e31e3c',
         'grey' : '#858585',
-        'light-greyish' : '#b7ac9b'
+        'light-greyish' : '#b7ac9b',
+        'blackishOpaque' : 'rgba(17,17,17,0.6)',
       },
       fontSize:{
         '1.5xl' : ['22px', '35px']

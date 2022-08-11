@@ -9,6 +9,8 @@
 :root{
 	--second-section-before-animation: none;
 	--second-section-after-animation: none;
+	--nugs-section-height : 0px;
+	--testing: 24px;
 }
 
 @font-face {
@@ -264,31 +266,71 @@ footer:hover > .footer--blurred{
 
 
 #nugs-section{
-	@apply fixed transitioning inset-0 top-[unset] flex flex-col bg-light-greyish pb-7 px-10 rounded-t-3xl;
+	@apply fixed transitioning inset-0 top-[unset] invisible flex-col bg-light-greyish py-7 pl-10 pr-9 rounded-t-3xl transitioning;
+	margin-bottom: var(--nugs-section-height);
+}
+
+.animation{
+	@apply transitioning visible flex pointer-events-auto !important;
+	transition: all 0.25s ease-in-out;
+}
+
+.animation #nugs--image{animation: slideUpMini 0.4s 0.4s ease-out forwards;}
+.animation #nugs--email{animation: slideUpMini 0.4s 0.5s ease-out forwards;}
+.animation #nugs--texts>p:nth-child(1){animation: slideUpMini 0.4s 0.6s ease-out forwards;}
+.animation #nugs--texts>p:nth-child(2){animation: slideUpMini 0.4s 0.7s  ease-out forwards;}
+.animation #nugs--texts>p:nth-child(3){animation: slideUpMini 0.4s 0.8s  ease-out forwards;}
+.animation #nugs--bottom-part{animation: slideUpMini 0.4s 0.9s  ease-out forwards;}
+
+@keyframes slideUpMini{
+	0%{
+		@apply opacity-0;
+	}
+
+	100%{
+		@apply opacity-100;
+	}
 }
 
 #nugs--image{
-	@apply w-[116px] my-6;
+	@apply w-[116px] mb-5 opacity-0 transitioning duration-[400ms] delay-[400ms];
+	transform: translateY(var(--testing));
 }
 
 #nugs--email{
-	@apply flex justify-between;
+	@apply flex justify-between opacity-0 transitioning duration-[400ms] delay-500;
+	transform: translateY(var(--testing));
 }
 
 #nugs--input{
-	@apply px-5 h-16 rounded-lg text-lg bg-[#bfb5a6] text-white placeholder:text-white placeholder:linetobook placeholder:text-lg active:outline-0 active:border-0 focus:outline-0 focus:border-0 hover:outline-0 hover:border-0 transitioning focus:bg-[#111111] max-w-[168px]/*rgba(17,17,17,.6)*/;
+	@apply px-[23px] h-16 rounded-lg text-lg bg-[#bfb5a6] text-white placeholder:text-white placeholder:linetobook placeholder:text-lg active:outline-0 active:border-0 focus:outline-0 focus:border-0 hover:outline-0 hover:border-0 transitioning focus:bg-blackishOpaque max-w-[168px] self-end ;
+}
+
+#nugs--submit-btn{
+	@apply text-[77px] -mb-[13px] -mr-2 cursor-not-allowed visible transitioning;
+	color: hsla(36, 16%, 75%);
+}
+
+.canSubmit{
+	@apply cursor-pointer text-white !important;
+}
+
+#nugs--texts{
+	@apply mb-px transitioning  duration-[400ms] delay-[600ms];
+	transform: translateY(var(--testing));
 }
 
 #nugs--texts>p{
-	@apply text-[1.375rem] leading-7 mt-[30px]
+	@apply text-[1.375rem] leading-7 mt-[30px] opacity-0;
 }
 
 #nugs--bottom-part{
-	@apply flex flex-wrap justify-between before:h-px before:w-full before:bg-whiteish before:my-7 before:min-w-full;
+	@apply flex flex-wrap justify-between items-center before:h-px before:w-full before:bg-[#d2cfc9] before:my-7 before:min-w-full opacity-0 transitioning duration-[400ms] delay-[900ms];
+	transform: translateY(var(--testing));
 }
 
 #nugs--bottom-part>p{
-	@apply cursor-pointer text-xl leading-6 text-whiteish opacity-60 hover:opacity-100 transitioning after:content-[''] after:w-full after:block after:h-[2px] after:bg-whiteish after:opacity-60 after:hover:opacity-100 after:hover:-mt-[2px] after:transitioning;
+	@apply cursor-pointer text-xl leading-6 last-of-type:text-lg text-whiteish opacity-60 hover:opacity-100 transitioning after:content-[''] after:w-full after:block after:h-0.5  after:bg-whiteish after:opacity-60 after:hover:opacity-100  after:-mt-px last-of-type:after:-mt-1 last-of-type:after:mb-0.5 after:hover:-mt-0.5 after:transitioning;
 }
 
 

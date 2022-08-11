@@ -592,6 +592,10 @@ video {
   }
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .relative {
   position: relative;
 }
@@ -648,8 +652,16 @@ video {
   min-width: 100%;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .items-center {
   align-items: center;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
 }
 
 .bg-\[\#111\] {
@@ -660,16 +672,6 @@ video {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
-}
-
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
 }
 
 .text-white {
@@ -698,6 +700,8 @@ video {
 :root{
   --second-section-before-animation: none;
   --second-section-after-animation: none;
+  --nugs-section-height : 0px;
+  --testing: 24px;
 }
 
 @font-face {
@@ -1361,32 +1365,105 @@ footer:hover > .footer--blurred {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
+  visibility: hidden;
   position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
   top: unset;
-  display: flex;
   flex-direction: column;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(183 172 155 / var(--tw-bg-opacity));
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-top: 1.75rem;
   padding-bottom: 1.75rem;
+  padding-left: 2.5rem;
+  padding-right: 2.25rem;
+  margin-bottom: var(--nugs-section-height);
+}
+
+.animation {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  display: flex !important;
+  transition: all 0.25s ease-in-out;
+}
+
+.animation #nugs--image{
+  -webkit-animation: slideUpMini 0.4s 0.4s ease-out forwards;
+          animation: slideUpMini 0.4s 0.4s ease-out forwards;
+}
+
+.animation #nugs--email{
+  -webkit-animation: slideUpMini 0.4s 0.5s ease-out forwards;
+          animation: slideUpMini 0.4s 0.5s ease-out forwards;
+}
+
+.animation #nugs--texts>p:nth-child(1){
+  -webkit-animation: slideUpMini 0.4s 0.6s ease-out forwards;
+          animation: slideUpMini 0.4s 0.6s ease-out forwards;
+}
+
+.animation #nugs--texts>p:nth-child(2){
+  -webkit-animation: slideUpMini 0.4s 0.7s  ease-out forwards;
+          animation: slideUpMini 0.4s 0.7s  ease-out forwards;
+}
+
+.animation #nugs--texts>p:nth-child(3){
+  -webkit-animation: slideUpMini 0.4s 0.8s  ease-out forwards;
+          animation: slideUpMini 0.4s 0.8s  ease-out forwards;
+}
+
+.animation #nugs--bottom-part{
+  -webkit-animation: slideUpMini 0.4s 0.9s  ease-out forwards;
+          animation: slideUpMini 0.4s 0.9s  ease-out forwards;
+}
+
+@-webkit-keyframes slideUpMini{
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpMini{
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 #nugs--image {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 1.25rem;
   width: 116px;
+  opacity: 0;
+  transition-delay: 400ms;
+  transition-duration: 400ms;
+  transform: translateY(var(--testing));
 }
 
 #nugs--email {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: space-between;
+  opacity: 0;
+  transition-delay: 500ms;
+  transition-duration: 400ms;
+  transform: translateY(var(--testing));
 }
 
 #nugs--input {
@@ -1395,11 +1472,12 @@ footer:hover > .footer--blurred {
   transition-duration: 500ms;
   height: 4rem;
   max-width: 168px;
+  align-self: flex-end;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(191 181 166 / var(--tw-bg-opacity));
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-left: 23px;
+  padding-right: 23px;
   font-size: 1.125rem;
   line-height: 1.75rem;
   --tw-text-opacity: 1;
@@ -1437,8 +1515,7 @@ footer:hover > .footer--blurred {
 
 #nugs--input:focus {
   border-width: 0px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 17 17 / var(--tw-bg-opacity));
+  background-color: rgba(17,17,17,0.6);
   outline-width: 0px;
 }
 
@@ -1447,16 +1524,50 @@ footer:hover > .footer--blurred {
   outline-width: 0px;
 }
 
+#nugs--submit-btn {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  visibility: visible;
+  margin-bottom: -13px;
+  margin-right: -0.5rem;
+  cursor: not-allowed;
+  font-size: 77px;
+  color: hsla(36, 16%, 75%);
+}
+
+.canSubmit {
+  cursor: pointer !important;
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+#nugs--texts {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 1px;
+  transition-delay: 600ms;
+  transition-duration: 400ms;
+  transform: translateY(var(--testing));
+}
+
 #nugs--texts>p {
   margin-top: 30px;
   font-size: 1.375rem;
   line-height: 1.75rem;
+  opacity: 0;
 }
 
 #nugs--bottom-part {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
+  opacity: 0;
+  transition-delay: 900ms;
+  transition-duration: 400ms;
 }
 
 #nugs--bottom-part::before {
@@ -1467,7 +1578,11 @@ footer:hover > .footer--blurred {
   min-width: 100%;
   content: var(--tw-content);
   --tw-bg-opacity: 1;
-  background-color: rgb(254 254 254 / var(--tw-bg-opacity));
+  background-color: rgb(210 207 201 / var(--tw-bg-opacity));
+}
+
+#nugs--bottom-part{
+  transform: translateY(var(--testing));
 }
 
 #nugs--bottom-part>p {
@@ -1486,8 +1601,9 @@ footer:hover > .footer--blurred {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
+  margin-top: -1px;
   display: block;
-  height: 2px;
+  height: 0.125rem;
   width: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(254 254 254 / var(--tw-bg-opacity));
@@ -1496,12 +1612,23 @@ footer:hover > .footer--blurred {
   content: var(--tw-content);
 }
 
+#nugs--bottom-part>p:last-of-type {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+#nugs--bottom-part>p:last-of-type::after {
+  margin-top: -0.25rem;
+  content: var(--tw-content);
+  margin-bottom: 0.125rem;
+}
+
 #nugs--bottom-part>p:hover {
   opacity: 1;
 }
 
 #nugs--bottom-part>p:hover::after {
-  margin-top: -2px;
+  margin-top: -0.125rem;
   content: var(--tw-content);
   opacity: 1;
 }
