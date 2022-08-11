@@ -701,7 +701,7 @@ video {
   --second-section-before-animation: none;
   --second-section-after-animation: none;
   --nugs-section-height : 0px;
-  --testing: 24px;
+  --translate1: 24px;
 }
 
 @font-face {
@@ -1373,14 +1373,30 @@ footer:hover > .footer--blurred {
   left: 0px;
   top: unset;
   flex-direction: column;
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
   --tw-bg-opacity: 1;
   background-color: rgb(183 172 155 / var(--tw-bg-opacity));
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
   padding-left: 2.5rem;
   padding-right: 2.25rem;
+}
+
+@media (min-width: 640px) {
+  #nugs-section {
+    left: 3.1rem;
+    right: 3.1rem;
+    border-top-left-radius: 4rem;
+    border-top-right-radius: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+#nugs-section{
   margin-bottom: var(--nugs-section-height);
 }
 
@@ -1448,22 +1464,35 @@ footer:hover > .footer--blurred {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 1.25rem;
+  margin-top: 3px;
   width: 116px;
   opacity: 0;
   transition-delay: 400ms;
   transition-duration: 400ms;
-  transform: translateY(var(--testing));
+}
+
+@media (min-width: 640px) {
+  #nugs--image {
+    margin-bottom: 1.75rem;
+    margin-top: 0.5rem;
+    width: 228px;
+  }
+}
+
+#nugs--image{
+  transform: translateY(var(--translate1));
 }
 
 #nugs--email {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
-  justify-content: space-between;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
   opacity: 0;
   transition-delay: 500ms;
   transition-duration: 400ms;
-  transform: translateY(var(--testing));
+  transform: translateY(var(--translate1));
 }
 
 #nugs--input {
@@ -1471,7 +1500,7 @@ footer:hover > .footer--blurred {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
   height: 4rem;
-  max-width: 168px;
+  max-width: 348px;
   align-self: flex-end;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
@@ -1524,6 +1553,10 @@ footer:hover > .footer--blurred {
   outline-width: 0px;
 }
 
+#nugs--input{
+  width: calc(100% - 76px);
+}
+
 #nugs--submit-btn {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1548,7 +1581,7 @@ footer:hover > .footer--blurred {
   margin-bottom: 1px;
   transition-delay: 600ms;
   transition-duration: 400ms;
-  transform: translateY(var(--testing));
+  transform: translateY(var(--translate1));
 }
 
 #nugs--texts>p {
@@ -1581,27 +1614,35 @@ footer:hover > .footer--blurred {
   background-color: rgb(210 207 201 / var(--tw-bg-opacity));
 }
 
+@media (min-width: 640px) {
+  #nugs--bottom-part::before {
+    content: var(--tw-content);
+    margin-top: 57px;
+    margin-bottom: 57px;
+  }
+}
+
 #nugs--bottom-part{
-  transform: translateY(var(--testing));
+  transform: translateY(var(--translate1));
 }
 
 #nugs--bottom-part>p {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
   cursor: pointer;
   font-size: 1.25rem;
   line-height: 1.5rem;
   --tw-text-opacity: 1;
   color: rgb(254 254 254 / var(--tw-text-opacity));
   opacity: 0.6;
+  transition-duration: 200ms;
+  transition-timing-function: linear;
 }
 
 #nugs--bottom-part>p::after{
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
-  margin-top: -1px;
   display: block;
   height: 0.125rem;
   width: 100%;
@@ -1617,20 +1658,33 @@ footer:hover > .footer--blurred {
   line-height: 1.75rem;
 }
 
-#nugs--bottom-part>p:last-of-type::after {
-  margin-top: -0.25rem;
-  content: var(--tw-content);
-  margin-bottom: 0.125rem;
-}
-
 #nugs--bottom-part>p:hover {
   opacity: 1;
 }
 
 #nugs--bottom-part>p:hover::after {
-  margin-top: -0.125rem;
   content: var(--tw-content);
   opacity: 1;
+}
+
+#neverMind:hover:after{
+  --translate1:  -3px;
+  transform: translateY(var(--translate1));
+}
+
+#privacy-policy{
+  --translate1: -1px;
+  transform: translateY(var(--translate1));
+}
+
+#privacy-policy:after{
+  --translate1:  -4px;
+  transform: translateY(var(--translate1));
+}
+
+#privacy-policy:hover:after{
+  --translate1:  -6px;
+  transform: translateY(var(--translate1));
 }
 
 @media (min-width: 860px) {

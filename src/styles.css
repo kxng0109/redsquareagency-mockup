@@ -10,7 +10,7 @@
 	--second-section-before-animation: none;
 	--second-section-after-animation: none;
 	--nugs-section-height : 0px;
-	--testing: 24px;
+	--translate1: 24px;
 }
 
 @font-face {
@@ -266,7 +266,7 @@ footer:hover > .footer--blurred{
 
 
 #nugs-section{
-	@apply fixed transitioning inset-0 top-[unset] invisible flex-col bg-light-greyish py-7 pl-10 pr-9 rounded-t-3xl transitioning;
+	@apply fixed transitioning inset-0 top-[unset] invisible flex-col bg-light-greyish py-7 pl-10 pr-9 rounded-t-[2rem] transitioning sm:inset-x-[3.1rem] sm:px-16 sm:py-14 sm:rounded-t-[4rem];
 	margin-bottom: var(--nugs-section-height);
 }
 
@@ -293,17 +293,18 @@ footer:hover > .footer--blurred{
 }
 
 #nugs--image{
-	@apply w-[116px] mb-5 opacity-0 transitioning duration-[400ms] delay-[400ms];
-	transform: translateY(var(--testing));
+	@apply w-[116px] mb-5 opacity-0 transitioning duration-[400ms] delay-[400ms] mt-[3px] sm:w-[228px] sm:mb-7 sm:mt-2;
+	transform: translateY(var(--translate1));
 }
 
 #nugs--email{
-	@apply flex justify-between opacity-0 transitioning duration-[400ms] delay-500;
-	transform: translateY(var(--testing));
+	@apply flex gap-x-2 opacity-0 transitioning duration-[400ms] delay-500;
+	transform: translateY(var(--translate1));
 }
 
 #nugs--input{
-	@apply px-[23px] h-16 rounded-lg text-lg bg-[#bfb5a6] text-white placeholder:text-white placeholder:linetobook placeholder:text-lg active:outline-0 active:border-0 focus:outline-0 focus:border-0 hover:outline-0 hover:border-0 transitioning focus:bg-blackishOpaque max-w-[168px] self-end ;
+	@apply px-[23px] h-16 rounded-lg text-lg bg-[#bfb5a6] text-white placeholder:text-white placeholder:linetobook placeholder:text-lg active:outline-0 active:border-0 focus:outline-0 focus:border-0 hover:outline-0 hover:border-0 transitioning focus:bg-blackishOpaque max-w-[348px] self-end ;
+	width: calc(100% - 76px);
 }
 
 #nugs--submit-btn{
@@ -317,7 +318,7 @@ footer:hover > .footer--blurred{
 
 #nugs--texts{
 	@apply mb-px transitioning  duration-[400ms] delay-[600ms];
-	transform: translateY(var(--testing));
+	transform: translateY(var(--translate1));
 }
 
 #nugs--texts>p{
@@ -325,12 +326,32 @@ footer:hover > .footer--blurred{
 }
 
 #nugs--bottom-part{
-	@apply flex flex-wrap justify-between items-center before:h-px before:w-full before:bg-[#d2cfc9] before:my-7 before:min-w-full opacity-0 transitioning duration-[400ms] delay-[900ms];
-	transform: translateY(var(--testing));
+	@apply flex flex-wrap justify-between items-center before:h-px before:w-full before:bg-[#d2cfc9] before:my-7 before:min-w-full opacity-0 transitioning duration-[400ms] delay-[900ms] sm:before:my-[57px];
+	transform: translateY(var(--translate1));
 }
 
 #nugs--bottom-part>p{
-	@apply cursor-pointer text-xl leading-6 last-of-type:text-lg text-whiteish opacity-60 hover:opacity-100 transitioning after:content-[''] after:w-full after:block after:h-0.5  after:bg-whiteish after:opacity-60 after:hover:opacity-100  after:-mt-px last-of-type:after:-mt-1 last-of-type:after:mb-0.5 after:hover:-mt-0.5 after:transitioning;
+	@apply cursor-pointer text-xl leading-6 last-of-type:text-lg text-whiteish opacity-60 hover:opacity-100 transitioning after:content-[''] after:w-full after:block after:h-0.5  after:bg-whiteish after:opacity-60 after:hover:opacity-100 after:transitioning ease-linear duration-200
+}
+
+#neverMind:hover:after{
+	--translate1:  -3px;
+	transform: translateY(var(--translate1));
+}
+
+#privacy-policy{
+	--translate1: -1px;
+	transform: translateY(var(--translate1));
+}
+
+#privacy-policy:after{
+	--translate1:  -4px;
+	transform: translateY(var(--translate1));
+}
+
+#privacy-policy:hover:after{
+	--translate1:  -6px;
+	transform: translateY(var(--translate1));
 }
 
 

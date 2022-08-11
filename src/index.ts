@@ -71,27 +71,32 @@ const useRegex = (input: string) => {
 useRegex(emailField.value);
 emailField.onkeyup = () => useRegex(emailField.value);
 
-//@ts-ignore
-neverMind.onclick = () => document.documentElement.onclick();
+neverMind.onclick = () => checkNugsClass();
 
 nugsLogoThirdSection.onclick = () =>{
 	document.documentElement.classList.add('pointer-events-none');
 	document.documentElement.classList.add('overflow-y-hidden');
 	nugsSection.style.setProperty('--nugs-section-height',  (`-0px`));
-	nugsSection.style.setProperty('--testing',  (`0px`));
+	nugsSection.style.setProperty('--translate1',  (`0px`));
 	nugsSection.className = 'animation';
 }
 
 document.documentElement.onclick = e =>{
-	//@ts-ignore using it because it say 'Property 'path' does not exist on type 'MouseEvent'' but it is
-	if(e.path.includes(nugsLogoThirdSection)) return; //If we are clicking on the nugs logo, don't do anything
-	nugsSection.classList.contains('animation') ?
-	(
-		document.documentElement.classList.remove('pointer-events-none'),
-		document.documentElement.classList.remove('overflow-y-hidden'),
-		nugsSection.style.setProperty('--nugs-section-height',  (`-${getComputedStyle(nugsSection).getPropertyValue('height')}`)),
-		nugsSection.style.setProperty('--testing',  (`24px`)),
-		setTimeout(() => nugsSection.classList.remove('animation'), 200)
-	) : '';
+	 //If we are clicking on the nugs logo or inside the nugs section, don't do anything
+	if(e.composedPath().includes(nugsLogoThirdSection) || e.composedPath().includes(nugsSection)) return;
+
+	//But if we click outside the nugs section, the close it
+	checkNugsClass();
 }
 nugsSection.style.setProperty('--nugs-section-height',  (`-${getComputedStyle(nugsSection).getPropertyValue('height')}`))
+
+function checkNugsClass () {
+    nugsSection.classList.contains('animation') ?
+    (
+        document.documentElement.classList.remove('pointer-events-none'),
+        document.documentElement.classList.remove('overflow-y-hidden'),
+        nugsSection.style.setProperty('--nugs-section-height', (`-${getComputedStyle(nugsSection).getPropertyValue('height')}`)),
+        nugsSection.style.setProperty('--translate1', (`24px`)),
+        setTimeout(() => nugsSection.classList.remove('animation'), 200)
+    ) : '';
+}
