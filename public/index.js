@@ -31,7 +31,7 @@ let changeNumber = () => {
     firstSectionImage.setAttribute('src', `./images/${imageSrcName[0]}`);
     return num = 1;
 };
-// setInterval(() => changeNumber(), 250);
+setInterval(() => changeNumber(), 250);
 let showElement = (theElement, theClassNameOrCssVariableName, value = 130, variableChangedValue = 'none') => {
     let calculations = windowHeight - theElement.getBoundingClientRect().top;
     switch (variableChangedValue) {

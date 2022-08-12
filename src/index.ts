@@ -33,7 +33,7 @@ let changeNumber = ():number =>{
 	return num = 1;
 };
 
-// setInterval(() => changeNumber(), 250);
+setInterval(() => changeNumber(), 250);
 
 let showElement = (theElement:HTMLElement, theClassNameOrCssVariableName:string, value:Number = 130, variableChangedValue = 'none') : void =>{
 	let calculations:number = windowHeight - theElement.getBoundingClientRect().top;
