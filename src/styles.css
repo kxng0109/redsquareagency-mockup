@@ -266,12 +266,12 @@ footer:hover > .footer--blurred{
 
 
 #nugs-section{
-	@apply fixed transitioning inset-0 top-[unset] invisible flex-col bg-light-greyish py-7 pl-10 pr-9 pb-[1.6rem] rounded-t-[2rem] transitioning sm:inset-x-[3.1rem] sm:px-16 sm:py-14 sm:pb-[3.35rem] sm:rounded-t-[4rem] lg:px-[82.5px] lg:pr-[72px] xl:inset-x-[105px];
+	@apply fixed transitioning inset-0 top-[unset] invisible flex-col bg-light-greyish py-7 pl-10 pr-9 pb-[1.6rem] rounded-t-[2rem] transitioning sm:inset-x-[3.1rem] sm:px-16 sm:py-14 sm:pb-[3.35rem] sm:rounded-t-[4rem] lg:px-[82.5px] lg:pr-[72px] xl:inset-x-[105px] xl:pt-9 2xl:pt-12;
 	margin-bottom: var(--nugs-section-height);
 }
 
 .animation{
-	@apply transitioning visible flex pointer-events-auto !important;
+	@apply transitioning duration-[400ms] ease-in-out visible flex pointer-events-auto !important;
 	transition: all 0.25s ease-in-out;
 }
 
@@ -293,11 +293,11 @@ footer:hover > .footer--blurred{
 }
 
 #nugs--top-part{
-	@apply flex flex-col lg:flex-row lg:justify-between lg:items-center;
+	@apply flex flex-col lg:flex-row lg:items-center;
 }
 
 #name-and-email{
-	@apply lg:flex-[0_0_50.5%];
+	@apply lg:flex-[0_0_50%];
 }
 
 #nugs--image{
@@ -325,16 +325,16 @@ footer:hover > .footer--blurred{
 }
 
 #nugs--texts{
-	@apply mb-px transitioning  duration-[400ms] delay-[600ms] lg:flex-[0_0_45.5%];
+	@apply mb-px transitioning  duration-[400ms] delay-[600ms] lg:flex-[0_0_50%] lg:pl-7 xl:pl-0;
 	transform: translateY(var(--translate1));
 }
 
 #nugs--texts>p{
-	@apply text-[1.375rem] leading-7 mt-[30px] opacity-0 lg:text-[1.6585vw] lg:leading-[2.0487vw] lg:first-of-type:mt-0;
+	@apply text-[1.375rem] leading-7 mt-[30px] opacity-0 lg:text-[1.6585vw] lg:leading-[2.0487vw] lg:first-of-type:mt-0 xl:text-2xl;
 }
 
 #nugs--bottom-part{
-	@apply flex flex-wrap justify-between items-center before:h-px before:w-full before:bg-[#d2cfc9] before:my-7 before:min-w-full opacity-0 transitioning duration-[400ms] delay-[900ms] sm:before:my-[57px] lg:before:mt-[88px] xl:before:mt-[82px];
+	@apply flex flex-wrap justify-between items-center before:h-px before:w-full before:bg-[#d2cfc9] before:my-7 before:min-w-full opacity-0 transitioning duration-[400ms] delay-[900ms] sm:before:my-[57px] lg:before:mt-[88px] /*xl:before:mt-[82px]*/xl:before:mt-[75px] 2xl:before:mt-[87px];
 	transform: translateY(var(--translate1));
 }
 
