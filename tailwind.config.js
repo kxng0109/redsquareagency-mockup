@@ -21,6 +21,14 @@ module.exports = {
       scale:{
         '98': '.98',
       },
+      zIndex:{
+        '1' : '1',
+        '2' : '2',
+        '3' : '3'
+      },
+      transitionDuration:{
+        '400' : '400ms'
+      }
     },
   },
   plugins: [],

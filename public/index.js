@@ -13,9 +13,35 @@ const neverMind = document.querySelector('#neverMind');
 const nugsSection = document.querySelector('#nugs-section');
 const nugsLogo = document.querySelector('.nugs-logo');
 const nugsLogoThirdSection = document.querySelector('.nugs-logo-third-section');
+const notBlur = document.querySelectorAll('.no-blur');
+const headerWork = document.querySelector('#header--work');
+const overlay = document.querySelector('#overlay');
+const thirdSectionEmailSide = document.querySelector('#third-section--email-side');
+// const converter = (name : string) :string =>{
+// 	let test = name;
+// 	//Everytime you see '-' replace it with an empty space
+// 	let lol = test.split('--').length > 1 ? 
+// 		(
+// 			test.replace(/-/g, '')
+// 		);
+// 	return lol;
+// }
+// console.log(converter('#header--work'))
 const clientNamesArr = [...clientNames];
 let windowHeight = window.innerHeight;
 window.onresize = () => windowHeight = window.innerHeight;
+notBlur.forEach(item => item.onmouseover = () => {
+    overlay.classList.add('backdrop-brightness-[.2]', 'backdrop-blur-sm', 'backdrop-contrast-[0.9]');
+    if (item === headerWork)
+        return;
+    thirdSection.classList.add('opacity');
+});
+notBlur.forEach(item => item.onmouseleave = () => {
+    overlay.classList.remove('backdrop-brightness-[.2]', 'backdrop-blur-sm', 'backdrop-contrast-[0.9]');
+    if (item === headerWork)
+        return;
+    setTimeout(() => thirdSection.classList.remove('opacity'), 400);
+});
 let imageSrcName = ['vr.jpg', 'uhh.jpg', 'bridge.jpg', 'road-and-trees.jpg', 'sitting-football.jpg', 'holding-beer.jpg', 'hotel.jpg', 'person-staring.jpg', 'laptops.jpg', 'beer-bottle.jpg', 'eatery.jpg', 'running-football.jpg'];
 let num = 0;
 //Loop through the array
@@ -31,7 +57,7 @@ let changeNumber = () => {
     firstSectionImage.setAttribute('src', `./images/${imageSrcName[0]}`);
     return num = 1;
 };
-setInterval(() => changeNumber(), 250);
+// setInterval(() => changeNumber(), 250);
 let showElement = (theElement, theClassNameOrCssVariableName, value = 130, variableChangedValue = 'none') => {
     let calculations = windowHeight - theElement.getBoundingClientRect().top;
     switch (variableChangedValue) {
