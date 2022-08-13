@@ -17,16 +17,6 @@ const notBlur = document.querySelectorAll('.no-blur');
 const headerWork = document.querySelector('#header--work');
 const overlay = document.querySelector('#overlay');
 const thirdSectionEmailSide = document.querySelector('#third-section--email-side');
-// const converter = (name : string) :string =>{
-// 	let test = name;
-// 	//Everytime you see '-' replace it with an empty space
-// 	let lol = test.split('--').length > 1 ? 
-// 		(
-// 			test.replace(/-/g, '')
-// 		);
-// 	return lol;
-// }
-// console.log(converter('#header--work'))
 const clientNamesArr = [...clientNames];
 let windowHeight = window.innerHeight;
 window.onresize = () => windowHeight = window.innerHeight;
@@ -36,10 +26,17 @@ notBlur.forEach(item => item.onmouseover = () => {
         return;
     thirdSection.classList.add('opacity');
 });
+// thirdSectionEmailSide.onmousemove = e =>{
+// 	let xValue = `${(e.offsetY / windowHeight) * 360/*(e.offsetX / 12)*/}deg`;
+// 	let yValue = `${((e.offsetY / windowHeight) * 360) - 15/*(e.offsetY / 12)*/}deg`;
+// 	console.log((e.offsetY / windowHeight) * 360);
+// 	thirdSectionEmailSide.style.transform = `rotateX(${xValue}) rotateY(${yValue})`;
+// }
 notBlur.forEach(item => item.onmouseleave = () => {
     overlay.classList.remove('backdrop-brightness-[.2]', 'backdrop-blur-sm', 'backdrop-contrast-[0.9]');
     if (item === headerWork)
         return;
+    thirdSectionEmailSide.style.transform = `rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
     setTimeout(() => thirdSection.classList.remove('opacity'), 400);
 });
 let imageSrcName = ['vr.jpg', 'uhh.jpg', 'bridge.jpg', 'road-and-trees.jpg', 'sitting-football.jpg', 'holding-beer.jpg', 'hotel.jpg', 'person-staring.jpg', 'laptops.jpg', 'beer-bottle.jpg', 'eatery.jpg', 'running-football.jpg'];
