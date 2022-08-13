@@ -27,10 +27,10 @@ notBlur.forEach(item => item.onmouseover = () => {
     thirdSection.classList.add('opacity');
 });
 // thirdSectionEmailSide.onmousemove = e =>{
-// 	let xValue = `${(e.offsetY / windowHeight) * 360/*(e.offsetX / 12)*/}deg`;
-// 	let yValue = `${((e.offsetY / windowHeight) * 360) - 15/*(e.offsetY / 12)*/}deg`;
-// 	console.log((e.offsetY / windowHeight) * 360);
-// 	thirdSectionEmailSide.style.transform = `rotateX(${xValue}) rotateY(${yValue})`;
+// 	let xValue = `${((e.offsetX / screen.width) * 360) /*-20*//*(e.offsetX / 12)*/}deg`;
+// 	let yValue = `${((e.offsetY / windowHeight) * 360) /*-20*/ (e.offsetY / 12)}deg`;
+// 	console.log(e.offsetX, e.offsetY,thirdSectionEmailSide.getBoundingClientRect());
+// 	// thirdSectionEmailSide.style.transform = `rotateX(${xValue}) rotateY(${yValue})`;
 // }
 notBlur.forEach(item => item.onmouseleave = () => {
     overlay.classList.remove('backdrop-brightness-[.2]', 'backdrop-blur-sm', 'backdrop-contrast-[0.9]');

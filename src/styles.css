@@ -94,7 +94,7 @@
 }
 
 .no-blur{
-	@apply relative z-3;
+	@apply relative z-3 transition-transform delay-[0ms];
 }
 
 .opacity{
