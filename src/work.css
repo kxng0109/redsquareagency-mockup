@@ -1,0 +1,19 @@
+#header--work{
+	@apply text-[17px] leading-[30px]
+}
+
+.works--div{
+	@apply relative cursor-pointer py-[10px];
+}
+
+.works{
+	@apply rounded-md transition-all duration-[400ms] ease-out hover:brightness-[0.35] hover:contrast-[0.91] hover:scale-[0.92] hover:brightness-[0.4];
+}
+
+.works--logo{
+	@apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-36 pointer-events-none
+}
+
+#third-section{
+	@apply opacity-100 py-7;
+}
