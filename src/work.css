@@ -1,19 +1,47 @@
+#header{
+	@apply lg:mb-[78px]
+}
+
 #header--work{
-	@apply text-[17px] leading-[30px]
+	@apply text-[17px] leading-[30px] sm:text-xl;
 }
 
 .works--div{
-	@apply relative cursor-pointer py-[10px];
+	@apply relative cursor-pointer py-[10px] sm:py-5 sm:first-of-type:pt-0 md:py-6 lg:px-[4.5rem] lg:py-[38px] lg:last-of-type:pb-0 xl:px-[136px] xl:first-of-type:pt-16 xl:py-[69px] 2xl:px-[151px] 2xl:first-of-type:pt-[74px] 2xl:py-[78px];
 }
 
 .works{
-	@apply rounded-md transition-all duration-[400ms] ease-out hover:brightness-[0.35] hover:contrast-[0.91] hover:scale-[0.92] hover:brightness-[0.4];
+	@apply rounded-md transition-all duration-[400ms] ease-out hover:brightness-[0.35] hover:contrast-[0.91] hover:scale-[0.92] hover:brightness-[0.4] lg:hover:scale-[0.975];
 }
 
 .works--logo{
-	@apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-36 pointer-events-none
+	@apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none;
 }
 
 #third-section{
-	@apply opacity-100 py-7;
+	@apply opacity-100 py-7 sm:pb-[69px] md:pb-[82px] lg:pt-8;
+}
+
+@media screen and (min-width: 860px){
+	#third-section{
+		@apply pb-[54px]
+	}
+}
+
+#third-section{
+	@apply lg:pb-[72px];
+}
+
+@media screen and (min-width: 1190px){
+	#third-section{
+		@apply pt-16 pb-[88px]
+	}
+}
+
+#third-section{
+	@apply xl:pb-[111px] xl:pt-[98px] 2xl:pt-[60px];
+}
+
+#third-section--email-side{
+	@apply pt-10
 }

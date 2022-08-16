@@ -86,7 +86,7 @@
 }
 
 #header--work{
-	@apply flex items-center sm:text-xl translate-x-0 hover:translate-x-2 transition-transform ease-[cubic-bezier(0.18,0.89,0.32,1.28)] duration-400 delay-100;
+	@apply flex items-center sm:text-xl translate-x-0 hover:translate-x-2 transition-transform ease-[cubic-bezier(0.18,0.89,0.32,1.28)] duration-400 delay-100 2xl:mr-14;
 }
 
 #header--work:hover>ion-icon{
