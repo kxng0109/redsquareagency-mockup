@@ -10,7 +10,7 @@
 	--second-section-before-animation: none;
 	--second-section-after-animation: none;
 	--nugs-section-height : 0px;
-	--translate1: 24px;
+	--translate: 24px;
 }
 
 @font-face {
@@ -106,7 +106,9 @@
 }
 
 #third-section{
-	@apply opacity-0 pt-64;
+	@apply opacity-0 transitioning duration-700 ease-out;
+	--translate: 75px;
+	transform: translateY(var(--translate));
 }
 
 #third-section--email-side{
@@ -214,12 +216,12 @@
 
 #nugs--image{
 	@apply w-[116px] mb-5 opacity-0 transitioning duration-400 delay-[400ms] mt-[3px] sm:w-[228px] sm:mb-7 sm:mt-2;
-	transform: translateY(var(--translate1));
+	transform: translateY(var(--translate));
 }
 
 #nugs--email{
 	@apply flex gap-x-2 opacity-0 transitioning duration-400 delay-500;
-	transform: translateY(var(--translate1));
+	transform: translateY(var(--translate));
 }
 
 #nugs--input{
@@ -238,7 +240,7 @@
 
 #nugs--texts{
 	@apply mb-px transitioning  duration-400 delay-[600ms] lg:flex-[0_0_50%] lg:pl-7 xl:pl-0;
-	transform: translateY(var(--translate1));
+	transform: translateY(var(--translate));
 }
 
 #nugs--texts>p{
@@ -247,7 +249,7 @@
 
 #nugs--bottom-part{
 	@apply flex flex-wrap justify-between items-center before:h-px before:w-full before:bg-[#d2cfc9] before:my-7 before:min-w-full opacity-0 transitioning duration-400 delay-[900ms] sm:before:my-[57px] lg:before:mt-[88px] /*xl:before:mt-[82px]*/xl:before:mt-[75px] 2xl:before:mt-[87px];
-	transform: translateY(var(--translate1));
+	transform: translateY(var(--translate));
 }
 
 #nugs--bottom-part>p{
@@ -255,22 +257,22 @@
 }
 
 #neverMind:hover:after{
-	--translate1:  -3px;
-	transform: translateY(var(--translate1));
+	--translate:  -3px;
+	transform: translateY(var(--translate));
 }
 
 #privacy-policy{
-	--translate1: -1px;
-	transform: translateY(var(--translate1));
+	--translate: -1px;
+	transform: translateY(var(--translate));
 }
 
 #privacy-policy:after{
-	--translate1:  -4px;
-	transform: translateY(var(--translate1));
+	--translate:  -4px;
+	transform: translateY(var(--translate));
 }
 
 #privacy-policy:hover:after{
-	--translate1:  -6px;
-	transform: translateY(var(--translate1));
+	--translate:  -6px;
+	transform: translateY(var(--translate));
 }
 

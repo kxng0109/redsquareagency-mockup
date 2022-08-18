@@ -38,7 +38,7 @@ nugsLogoThirdSection.onclick = () => {
     document.documentElement.classList.add('pointer-events-none');
     document.documentElement.classList.add('overflow-y-hidden');
     nugsSection.style.setProperty('--nugs-section-height', (`-0px`));
-    nugsSection.style.setProperty('--translate1', (`0px`));
+    nugsSection.style.setProperty('--translate', (`0px`));
     nugsSection.className = 'animation';
 };
 document.documentElement.onclick = e => {

@@ -34,29 +34,34 @@ let changeNumber = () => {
     firstSectionImage.setAttribute('src', `./images/${imageSrcName[0]}`);
     return num = 1;
 };
-setInterval(() => changeNumber(), 250);
-let showElement = (theElement, theClassNameOrCssVariableName, value = 130, variableChangedValue = 'none') => {
+// setInterval(() => changeNumber(), 250);
+let showElement = (theElement, theClassName, value = 130, theCssVariableName = 'none', valueForCssVariable = 'none', defaultValueForCssVariable = 'none') => {
     let calculations = windowHeight - theElement.getBoundingClientRect().top;
-    switch (variableChangedValue) {
-        case 'none':
-            calculations > value ? theElement.classList.add(theClassNameOrCssVariableName) :
-                calculations < 0 ? theElement.classList.remove(theClassNameOrCssVariableName) :
-                    '';
+    switch (true) {
+        case theClassName === null:
+            calculations > value ? theElement.style.setProperty(theCssVariableName, valueForCssVariable) :
+                theElement.style.setProperty(theCssVariableName, defaultValueForCssVariable);
             break;
-        default:
-            calculations > value ? theElement.style.setProperty(theClassNameOrCssVariableName, variableChangedValue) :
-                theElement.style.setProperty(theClassNameOrCssVariableName, 'none');
+        case theClassName != null && calculations > value:
+            //@ts-ignore
+            theElement.classList.add(theClassName);
+            theElement.style.setProperty(theCssVariableName, valueForCssVariable);
+            break;
+        case theClassName != null && calculations < 0:
+            //@ts-ignore
+            theElement.classList.remove(theClassName);
+            theElement.style.setProperty(theCssVariableName, defaultValueForCssVariable);
             break;
     }
 };
 window.onscroll = () => {
-    showElement(firstSectionFirstP, 'first-p-animation');
-    showElement(firstSectionSecondP, 'second-p-animation');
-    showElement(secondSection, '--second-section-before-animation', 10, 'increaseWidth 0.6s ease-out forwards');
+    showElement(firstSectionFirstP, 'first-p-animation', 80, '--translate', '0px', '75px');
+    showElement(firstSectionSecondP, 'second-p-animation', 80, '--translate', '0px', '75px');
+    showElement(secondSection, null, 10, '--second-section-before-animation', 'increaseWidth 0.6s ease-out forwards');
     clientNames.forEach(item => {
         showElement(item, 'clients--name--animation', 10);
     });
-    showElement(secondSectionHeader, 'second-section-header-animation', 10);
-    showElement(secondSection, '--second-section-after-animation', parseInt(getComputedStyle(secondSection).getPropertyValue('height')), 'increaseWidth 0.6s ease-out forwards');
-    showElement(thirdSection, 'second-p-animation', 150);
+    showElement(secondSectionHeader, 'second-section-header-animation', 10, '--translate', '0px', '75px');
+    showElement(secondSection, null, parseInt(getComputedStyle(secondSection).getPropertyValue('height')), '--second-section-after-animation', 'increaseWidth 0.6s ease-out forwards');
+    showElement(thirdSection, 'second-p-animation', 90, '--translate', '0px', '75px');
 };
