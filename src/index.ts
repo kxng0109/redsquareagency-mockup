@@ -16,13 +16,6 @@ headerWork.onclick = () =>{
 	window.location = 'work.html';
 }
 
-// thirdSectionEmailSide.onmousemove = e =>{
-// 	let xValue = `${((e.offsetX / screen.width) * 360) /*-20*//*(e.offsetX / 12)*/}deg`;
-// 	let yValue = `${((e.offsetY / windowHeight) * 360) /*-20*/ (e.offsetY / 12)}deg`;
-// 	console.log(e.offsetX, e.offsetY,thirdSectionEmailSide.getBoundingClientRect());
-// 	// thirdSectionEmailSide.style.transform = `rotateX(${xValue}) rotateY(${yValue})`;
-// }
-
 let imageSrcName:string[] = ['vr.jpg', 'uhh.jpg', 'bridge.jpg', 'road-and-trees.jpg', 'sitting-football.jpg', 'holding-beer.jpg', 'hotel.jpg', 'person-staring.jpg', 'laptops.jpg', 'beer-bottle.jpg', 'eatery.jpg', 'running-football.jpg'];
 let num:number = 0;
 
@@ -39,7 +32,7 @@ let changeNumber = ():number =>{
 	return num = 1;
 };
 
-// setInterval(() => changeNumber(), 250);
+setInterval(() => changeNumber(), 250);
 
 let showElement = (theElement:HTMLElement, theClassName: string|null, value:Number = 130, theCssVariableName: string = 'none', valueForCssVariable = 'none', defaultValueForCssVariable = 'none') : void =>{
 	let calculations:number = windowHeight - theElement.getBoundingClientRect().top;
