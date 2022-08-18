@@ -32,6 +32,11 @@ let changeNumber = ():number =>{
 	return num = 1;
 };
 
+firstSectionImage.onclick = () => {
+	//@ts-ignore
+	window.location = 'work.html';
+}
+
 setInterval(() => changeNumber(), 250);
 
 let showElement = (theElement:HTMLElement, theClassName: string|null, value:Number = 130, theCssVariableName: string = 'none', valueForCssVariable = 'none', defaultValueForCssVariable = 'none') : void =>{

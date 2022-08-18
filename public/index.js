@@ -28,6 +28,10 @@ let changeNumber = () => {
     firstSectionImage.setAttribute('src', `./images/${imageSrcName[0]}`);
     return num = 1;
 };
+firstSectionImage.onclick = () => {
+    //@ts-ignore
+    window.location = 'work.html';
+};
 setInterval(() => changeNumber(), 250);
 let showElement = (theElement, theClassName, value = 130, theCssVariableName = 'none', valueForCssVariable = 'none', defaultValueForCssVariable = 'none') => {
     let calculations = windowHeight - theElement.getBoundingClientRect().top;
